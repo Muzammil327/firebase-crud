@@ -18,9 +18,8 @@ function Register() {
       setErrorMessage("6 Character Password is Required.");
     } else {
       try {
-         await createUserWithEmailAndPassword(auth, email, password);
-        
-        
+        await createUserWithEmailAndPassword(auth, email, password);
+
         navigate("/auth/login");
         // User registered successfully
       } catch (error) {
@@ -38,23 +37,27 @@ function Register() {
   };
 
   return (
-    <div>
-    
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
+    <form>
+      <h1>Register</h1>
+      <fieldset>
+        <label htmlFor="email">Email:</label>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <label htmlFor="password">Password:</label>
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+      </fieldset>
       {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-      <button onClick={handleSignup}>Sign Up</button>
-    </div>
+      <button class="btn" onClick={handleSignup}>Sign Up</button>
+    </form>
   );
 }
 
