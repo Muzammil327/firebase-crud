@@ -11,7 +11,7 @@ import Register from "./pages/Auth/Register";
 import Dashboard from "./pages/notes/Dashboard";
 import {
   DashboardProtectedRoute,
-  // LoginProtectedRoute,
+  LoginProtectedRoute,
 } from "./pages/private/Dashboard";
 import AddPage from "./pages/notes/AddPage";
 import UpdatePage from "./pages/notes/UpdatePage";
@@ -31,9 +31,9 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <>
-        {/* <LoginProtectedRoute> */}
+        <LoginProtectedRoute>
           <Home />
-        {/* </LoginProtectedRoute> */}
+        </LoginProtectedRoute>
       </>
     ),
   },
