@@ -17,7 +17,7 @@ export const LoginProtectedRoute = ({ children }) => {
   if (user) {
     return <Navigate to="/notes/dashboard" />;
   } else {
-    return <Navigate to="/" />;
+    return <Navigate to="/auth/register" />;
   }
 
   // eslint-disable-next-line no-unreachable
