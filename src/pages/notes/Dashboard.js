@@ -4,6 +4,7 @@ import { auth } from "../../config/firebase-config";
 import { useEffect, useState } from "react";
 import { UserAuth } from "../../contexts/AuthContext";
 import { signOut } from "firebase/auth";
+import { Link } from "react-router-dom";
 
 function Dashboard() {
   const { user } = UserAuth();
@@ -60,7 +61,7 @@ function Dashboard() {
               <td data-label="Age">{data.age}</td>
               <td data-label="Marks%">{data.description}</td>
               <td data-label="Marks%" class="d">
-                <a href={`/update/${data.id}`}>Update</a>
+                <Link to={`/update/${data.id}`}>Update</Link>
                 <button
                   onClick={() => {
                     handleDelete(data.id);
@@ -73,9 +74,9 @@ function Dashboard() {
           ))}
         </tbody>
       </table>
-      <a href={`/add`} class="btn">
+      <Link to={`/add`} class="btn">
         Add
-      </a>
+      </Link>
     </>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 export default function Home() {
   return (
     <div>
@@ -11,9 +11,9 @@ export default function Home() {
               Are you interested in adding notes on your?
             </p>
             <div className="btns">
-              <a href="/auth/login">
+              <Link to="/auth/login">
               <button>Click on Login Button</button>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -22,15 +22,6 @@ function Register() {
         navigate("/");
         // User LOGIN successfully
       } catch (error) {
-        // // Check if the error is due to email NOT already being in use
-        // if (!error.code === "auth/email-already-in-use") {
-        //   setErrorMessage(
-        //     "Email is already in use. Please use a different email."
-        //   );
-        // } else {
-        //   console.error("Error registering user:", error);
-        //   setErrorMessage("An error occurred during registration.");
-        // }
         switch (error.code) {
           case "auth/user-not-found":
             setErrorMessage("Email is not registered.");
